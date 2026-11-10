@@ -1,0 +1,63 @@
+# Rossetta Sornabala
+
+> Independent Management Consultant based in Toronto, Canada. I've built AI infrastructure at hyperscale. Now I help people make AI work.
+
+For thirty years, at Microsoft, Hewlett Packard Enterprise and BlackBerry, my work has been making big technology change actually work for the people who live with it. Today I help leadership teams adopt AI across their organizations and deploy AI infrastructure in hyperscale data centers. My personal passion is mentoring founders who are using AI to win.
+
+- Website: https://rossetta.ai/
+- Email: hello@rossetta.ai
+- LinkedIn: https://www.linkedin.com/in/rossetta-sornabala-2749b435/
+- Location: Toronto, Canada
+
+## Proof points
+
+- 6,000+ people I've helped adopt AI at work
+- 5,000+ GPU clusters my teams delivered
+- 52 data centers consolidated
+- $250M+ in annual savings
+- 30+ years of leading change
+
+## Services
+
+### AI Transformation
+I help you turn AI into real productivity gains your people can feel, not another pilot that quietly stalls.
+- High-value, time-saving use cases
+- Measuring productivity gains and return on AI
+- Automation and AI agents for routine work
+- Change that brings people along
+
+### Data Center Operations
+I help you deploy AI infrastructure in hyperscale data centers with predictable, scalable delivery.
+- GPU and AI cluster deployment programs
+- Operational readiness and handoff
+- Data center consolidation and migration
+- Cross-functional delivery orchestration
+
+### Startup Mentoring
+I give founders honest counsel and the operating backbone to scale, and I help them use AI to win.
+- Operating model and execution cadence
+- Developing your team into leaders
+- Go-to-market and partnership strategy
+- Investor readiness
+
+## Track record
+
+- 2025 – 2026, Microsoft: Architected the Data Center Operations AI Transformation Program. I led AI transformation for 6,000+ technicians, engineers and managers across Americas data centers, from automation to AI agents.
+- 2023 – 2025, Microsoft: Built the Americas Data Center Operations GPU Deployment Program. I built the program and operating model behind the Americas GPU deployment of some of the world's largest AI supercomputers: 5,000+ GPU clusters for frontier AI workloads.
+- 2013 – 2018, Hewlett Packard Enterprise & DXC: Led the consolidation and migration of 52 data centers globally. I led global portfolio management for a $200M+ transformation program that delivered more than $250M in annual savings.
+- 2010 – 2013, BlackBerry: Chief of Staff to the CIO. I was the bridge between the CIO's 18 VPs and BlackBerry's Enterprise Business Unit, working alongside the offices of the CEO, CFO, COO and CMO.
+
+## Founders I've had the privilege to support
+
+- Mindset Therapy™ (https://www.instagram.com/mindset.therapy): the largest self-development network on social media, reaching nearly 300 million people a year, including 11.2M+ followers on Instagram.
+- NexLev (https://nexlev.io): an AI-powered YouTube platform that scans millions of channels to find high-demand, low-competition niches. Today the company has grown to 7 figures.
+- Viralspot.ai (https://viralspot.ai): an AI-powered tool that helps creators spot viral content, craft hooks that convert, and skip endless research.
+
+## Recognition and credentials
+
+- Courageous Leadership Award, Microsoft
+- Two-time Hewlett Packard MVP
+- PMP · PMI-ACP · ITIL
+- MBA · Doctor of Education candidate
+- Associate Faculty, two universities
+- Co-author, two books on project management

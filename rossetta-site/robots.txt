@@ -1,0 +1,6 @@
+# Search engines and AI answer engines are welcome to read this site.
+User-agent: *
+Allow: /
+Disallow: /_original/
+
+Sitemap: https://rossetta.ai/sitemap.xml

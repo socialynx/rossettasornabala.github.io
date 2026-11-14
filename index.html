@@ -526,6 +526,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 .c-meta a:hover{color:var(--bronze);border-color:var(--bronze)}
 .c-meta .tz{display:inline-flex;align-items:center;gap:10px}
 .c-meta .tz-time{font-variant-numeric:tabular-nums;color:var(--t-dark-2);opacity:.75}
+.form-status{margin:0 0 14px;font-size:15px;line-height:1.5}.form-status.err{color:#e88}.form-thanks{grid-column:1/-1;padding:28px 0}.form-thanks h3{font-family:"Playfair Display",serif;font-weight:500;font-size:30px;margin:0 0 10px}.form-thanks p{margin:0;opacity:.8;line-height:1.6}
 form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px 28px;align-content:start}
 .field{display:flex;flex-direction:column;gap:4px;position:relative}
 .field.full{grid-column:1/-1}
@@ -855,13 +856,14 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
 <span class="tz"><span>Toronto, Canada</span><span class="tz-time" aria-hidden="true"></span></span>
 </div>
 </div>
-<form id="contact-form" class="c-form reveal" aria-label="Contact form">
+<form id="contact-form" class="c-form reveal" aria-label="Contact form" action="https://formspree.io/f/mrpqejgd" method="POST">
+<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
 <div class="field"><label for="c-name">Name</label><input id="c-name" name="name" type="text" required autocomplete="name"></div>
 <div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required autocomplete="email"></div>
 <div class="field"><label for="c-org">Organization</label><input id="c-org" name="organization" type="text" autocomplete="organization"></div>
 <div class="field"><label for="c-topic">Area of interest</label><select id="c-topic" name="topic"><option>AI transformation</option><option>Data center operations</option><option>Startup mentoring</option><option>Something else</option></select></div>
-<div class="field full"><label for="c-msg">Your note</label><textarea id="c-msg" name="message" rows="5"></textarea></div>
-<div class="form-foot"><button type="submit" class="btn btn-dark magnetic">Send note <span class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
+<div class="field full"><label for="c-msg">Your note</label><textarea id="c-msg" name="message" rows="5" required></textarea></div>
+<div class="form-foot"><p class="form-status" role="status" aria-live="polite"></p><button type="submit" class="btn btn-dark magnetic">Send note <span class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
 </form>
 </div>
 </div>
@@ -927,15 +929,24 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  /* ---------- contact form → mailto (unchanged behaviour) ---------- */
+  /* ---------- contact form → Formspree ---------- */
   var f=document.getElementById('contact-form');
-  if(f){
+  if(f && window.fetch){
     f.addEventListener('submit',function(e){
       e.preventDefault();
+      var btn=f.querySelector('button[type=submit]'), st=f.querySelector('.form-status');
       var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
-      var subject='Website inquiry: '+v('c-topic')+(v('c-org')?' ('+v('c-org')+')':'');
-      var text='Name: '+v('c-name')+'\nEmail: '+v('c-email')+'\nOrganization: '+v('c-org')+'\nArea of interest: '+v('c-topic')+'\n\n'+v('c-msg');
-      window.location.href='mailto:hello@rossetta.ai?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(text);
+      var data=new FormData(f);
+      data.append('_subject','Website inquiry: '+v('c-topic')+(v('c-org')?' ('+v('c-org')+')':''));
+      data.append('_replyto',v('c-email'));
+      btn.disabled=true; st.className='form-status'; st.textContent='Sending…';
+      fetch(f.action,{method:'POST',body:data,headers:{'Accept':'application/json'}}).then(function(r){
+        if(!r.ok) throw new Error('bad');
+        f.innerHTML='<div class="form-thanks" role="status"><h3>Thank you.</h3><p>Your note is on its way. I read every message and will be in touch soon.</p></div>';
+      }).catch(function(){
+        btn.disabled=false; st.className='form-status err';
+        st.innerHTML='Sorry, that didn\'t send. Please email me at <a href="mailto:hello@rossetta.ai">hello@rossetta.ai</a>.';
+      });
     });
   }
 

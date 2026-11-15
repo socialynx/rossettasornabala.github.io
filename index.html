@@ -1170,9 +1170,7 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
   fitStats();
 
   /* section scale-in for rounded panels */
-  gsap.utils.toArray('.rounded-top:not(.track)').forEach(function(sec){
-    gsap.from(sec,{scale:.94,transformOrigin:'50% 0%',ease:'none',scrollTrigger:{trigger:sec,start:'top bottom',end:'top 45%',scrub:true}});
-  });
+  /* (scale-in removed: it exposed a stepped edge mid-scroll) */
 
   /* mentoring headline: gentle scale-in on scroll */
   gsap.fromTo('.mentoring h2',{scale:.94},{scale:1,transformOrigin:'50% 50%',ease:'none',scrollTrigger:{trigger:'.mentoring',start:'top bottom',end:'center center',scrub:true}}); /* transform only: no re-wrapping of lines */

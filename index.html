@@ -284,11 +284,12 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
 
 /* type */
 .eyebrow{display:inline-flex;align-items:center;gap:14px;margin:0;font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
-.eyebrow::before{content:"";width:36px;height:1px;background:currentColor}
+
 .light .eyebrow{color:var(--bronze)}
 .serif{font-family:var(--serif);font-variation-settings:var(--fvs,normal);font-weight:var(--dw);letter-spacing:var(--dt);line-height:1.04;font-optical-sizing:auto}
 .serif em,.serif i{font-style:normal;font-weight:inherit;color:var(--gold)}
 .light .serif em{color:var(--bronze)}
+h2.serif em{color:inherit;font-style:normal}
 .light{background:var(--paper);color:var(--t-dark)}
 .rounded-top{border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;position:relative;z-index:2}
 .rounded-both{border-radius:clamp(28px,4vw,64px);position:relative;z-index:2}
@@ -440,7 +441,7 @@ body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;
   radial-gradient(50% 50% at 50% 0%,rgba(var(--gold-rgb),.14),transparent 70%),var(--ink)}
 .mentoring-head{text-align:center;max-width:1300px;margin:0 auto}
 .mentoring-head .eyebrow{justify-content:center}
-.mentoring-head .eyebrow::after{content:"";width:36px;height:1px;background:currentColor}
+.mentoring-head 
 .mentoring h2{margin:34px 0 0;font-size:clamp(40px,6vw,112px);line-height:1}
 .mentor-sub{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px 64px;align-items:end;max-width:1100px;margin:clamp(56px,6vw,96px) auto 0;padding-top:40px;border-top:1px solid var(--line-d)}
 .mentor-sub p{margin:0;font-size:clamp(18px,1.5vw,22px);font-weight:400;line-height:1.6;color:var(--t-light-2)}
@@ -669,7 +670,6 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
 <section id="services" class="services light rounded-top">
 <div class="wrap">
 <div class="sec-head">
-<p class="eyebrow reveal">Services</p>
 <h2 class="serif split">Three ways I help, <em>one thing I care about:</em> putting people at the center of change.</h2>
 </div>
 
@@ -717,7 +717,6 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
 <section id="mentoring" class="mentoring rounded-top" style="margin-top:calc(-1 * clamp(28px,4vw,64px))">
 <div class="wrap">
 <div class="mentoring-head">
-<p class="eyebrow reveal">Why I mentor</p>
 <h2 class="serif split">The most important thing a leader builds <em>is other leaders.</em></h2>
 </div>
 <div class="mentor-sub reveal">
@@ -737,7 +736,6 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
 <div class="wrap">
 <div class="sec-head">
 <div>
-<p class="eyebrow reveal">Mentorship</p>
 <h2 class="serif split">Founders I've had the <em>privilege to support</em></h2>
 </div>
 <p class="lede reveal">My greatest joy comes from supporting entrepreneurs as they turn ideas into meaningful and sustainable businesses. Here are a few of the founders and teams I have had the privilege to work with.</p>
@@ -779,7 +777,6 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
 <div class="track-pin">
 <div class="track-head">
 <div>
-<p class="eyebrow reveal">Track Record</p>
 <h2 class="serif split">Work I'm <em>proud of</em></h2>
 </div>
 <div class="track-progress" aria-hidden="true"><i></i></div>
@@ -845,7 +842,6 @@ form.c-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3
 
 <section id="contact" class="contact light rounded-top" style="margin-top:calc(-1 * clamp(28px,4vw,64px))">
 <div class="wrap">
-<p class="eyebrow reveal">Get in touch</p>
 <h2 class="serif split">Tell me what you're <em>working on.</em></h2>
 <div class="contact-grid">
 <div class="reveal">

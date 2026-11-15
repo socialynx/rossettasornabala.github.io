@@ -2,5 +2,6 @@
 User-agent: *
 Allow: /
 Disallow: /signature.html
+Disallow: /snapshot.html
 
 Sitemap: https://rossetta.ai/sitemap.xml

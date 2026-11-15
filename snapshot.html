@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A private, by-referral offer from Rossetta Sornabala to modernize your website and put AI to work.">
+<title>Website & AI Snapshot · Rossetta Sornabala</title>
+<link rel="icon" href="images/rs-logo-email.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+:root{
+  --ink:#0C1210;--ink-2:#121A17;--ink-3:#1A2622;--green:#1F3D36;
+  --gold:#C8AD7F;--gold-2:#E6D6B5;--bronze:#8E6B3A;
+  --paper:#F5F0E8;--ivory:#EEE7DB;--ivory-2:#E4DACA;
+  --t-dark:#14201C;--t-dark-2:#45504B;--t-light:#EEE7DB;--t-light-2:#B5BCB7;
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --pad:clamp(18px,3.6vw,56px);
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;background:var(--paper);color:var(--t-dark);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{width:min(var(--max),100% - 2*var(--pad));margin-inline:auto}
+.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.1}
+.serif em{font-style:normal}
+.label{font-size:12.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:14px;font:inherit;font-size:15px;font-weight:500;letter-spacing:.01em;text-decoration:none;padding:16px 26px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease)}
+.btn .arr{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;transition:transform .4s var(--ease)}
+.btn:hover .arr{transform:translateX(3px)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold .arr{background:var(--ink);color:var(--gold)}
+.btn-gold:hover{background:var(--gold-2)}
+.btn-dark{background:var(--ink);color:var(--ivory)}
+.btn-dark .arr{background:var(--gold);color:var(--ink)}
+.btn-dark:hover{background:var(--green)}
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.btn[disabled]{opacity:.6;cursor:default}
+
+/* dark hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(100deg,var(--ink) 0%,var(--ink-2) 50%,var(--ink-3) 100%);color:var(--t-light);padding:0 0 clamp(80px,11vw,140px)}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 78% 30%,rgba(31,61,54,.9),transparent 70%),radial-gradient(ellipse 30% 45% at 82% 25%,rgba(200,173,127,.08),transparent 70%);pointer-events:none}
+.hero > *{position:relative}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:30px 0}
+.brand{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--t-light)}
+.nav .label{color:var(--gold)}
+.hero-body{padding-top:clamp(56px,9vw,120px)}
+.hero .label.eyebrow{color:var(--gold);margin-bottom:26px;display:block}
+.hero h1{font-size:clamp(40px,6vw,84px);max-width:13em;margin-bottom:28px}
+.hero h1 em{color:var(--gold)}
+.hero-sub{font-size:clamp(18px,1.6vw,21px);color:var(--t-light-2);max-width:34rem;margin-bottom:42px}
+
+/* sections */
+section{padding:clamp(80px,10vw,128px) 0}
+.sec-head{max-width:40rem;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head .label{color:var(--bronze);display:block;margin-bottom:18px}
+h2.serif{font-size:clamp(32px,3.6vw,52px)}
+h2.serif em{color:var(--bronze)}
+.sec-head p{color:var(--t-dark-2);margin-top:16px;font-size:18px}
+
+/* problem */
+.problem{padding-bottom:0}
+.problem p{font-family:var(--serif);font-weight:400;font-size:clamp(23px,2.3vw,34px);line-height:1.35;letter-spacing:-.01em;max-width:24em;color:var(--t-dark)}
+.problem p + p{margin-top:.7em}
+.problem p.muted{color:var(--t-dark-2)}
+.problem p.close{color:var(--bronze)}
+
+/* steps */
+.steps{border-top:1px solid rgba(20,32,28,.14);display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.step{padding:40px 40px 44px 0;border-bottom:1px solid rgba(20,32,28,.14)}
+.step:nth-child(odd){border-right:1px solid rgba(20,32,28,.14)}
+.step:nth-child(even){padding-left:40px;padding-right:0}
+.step .num{font-family:var(--serif);color:var(--bronze);font-size:18px;display:block;margin-bottom:18px}
+.step h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.2vw,32px);line-height:1.15;margin-bottom:14px}
+.step p{color:var(--t-dark-2)}
+.step .tag{display:inline-block;margin-top:18px;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+
+/* thank-you band */
+.thanks-band{padding:0}
+.band{background:var(--ivory);border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.band .label{color:var(--bronze)}
+.band h2{font-size:clamp(28px,2.8vw,40px)}
+.band p{color:var(--t-dark-2);margin-top:12px;max-width:36rem}
+
+/* about (dark) */
+.about{background:linear-gradient(100deg,var(--ink) 0%,var(--ink-2) 50%,var(--ink-3) 100%);color:var(--t-light);border-radius:36px 36px 0 0;margin-top:clamp(80px,10vw,128px)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:start}
+.about .label{color:var(--gold);display:block;margin-bottom:18px}
+.about h2 em{color:var(--gold)}
+.about .rule{width:56px;height:1px;background:var(--gold);margin-bottom:24px}
+.about p{color:var(--t-light-2);font-size:18px}
+.about p strong{color:var(--t-light);font-weight:400}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.pill{font-size:12.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;padding:9px 16px;border-radius:999px;border:1px solid rgba(238,231,219,.2);color:var(--t-light)}
+.about a.more{display:inline-block;margin-top:28px;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,173,127,.5);padding-bottom:2px}
+
+/* form */
+.request{background:var(--ink-2);color:var(--t-light);padding-top:clamp(40px,6vw,80px)}
+.form-card{background:var(--paper);color:var(--t-dark);border-radius:28px;padding:clamp(32px,5vw,64px)}
+.form-card .sec-head{margin-bottom:36px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+label{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--t-dark-2)}
+input,textarea{font:inherit;font-weight:400;font-size:17px;color:var(--t-dark);background:transparent;border:0;border-bottom:1px solid rgba(20,32,28,.25);padding:10px 0;width:100%;border-radius:0;transition:border-color .3s}
+textarea{min-height:120px;resize:vertical}
+input:focus,textarea:focus{outline:none;border-bottom-color:var(--bronze)}
+input::placeholder,textarea::placeholder{color:#9aa19d}
+.form-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:8px}
+.alt{color:var(--t-dark-2);font-size:15px}
+.alt a{color:var(--t-dark);font-weight:500;text-underline-offset:3px}
+.status{grid-column:1/-1;font-size:15px}
+.status.err{color:#9b3b2e}
+.done h3{font-family:var(--serif);font-weight:500;font-size:clamp(28px,2.8vw,40px);margin-bottom:10px}
+.done p{color:var(--t-dark-2)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* footer */
+footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-size:14px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 32px;border-top:1px solid rgba(238,231,219,.13);padding-top:28px}
+.foot .brand{font-size:13px}
+
+@media (max-width:860px){
+  .steps,.about-grid,form,.band{grid-template-columns:1fr}
+  .step,.step:nth-child(even){padding:32px 0;border-right:0}
+  .band{gap:16px}
+}
+@media (max-width:520px){
+  .btn{width:100%;justify-content:space-between}
+  .nav .label{display:none}
+  .foot{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap nav">
+    <a class="brand" href="https://rossetta.ai">Rossetta Sornabala</a>
+    <span class="label">By invitation</span>
+  </div>
+  <div class="wrap hero-body">
+    <span class="label eyebrow">Private offer</span>
+    <h1 class="serif">Your website should work <em>as hard as you do.</em></h1>
+    <p class="hero-sub">A private, by-referral offer for companies ready to modernize their website and put AI to work.</p>
+    <a class="btn btn-gold" href="#request">Request your free snapshot <span class="arr" aria-hidden="true">&rarr;</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="problem" aria-label="The opportunity">
+    <div class="wrap">
+      <p>Most B2B websites were built for a different era. They look dated, bury the message and quietly lose leads.</p>
+      <p class="muted">Meanwhile, AI can now handle much of the busywork your team still does by hand: qualifying leads, answering common questions, following up and keeping your CRM current.</p>
+      <p class="close">I help mid-size companies fix both.</p>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">The offer</span>
+        <h2 class="serif">How it <em>works</em></h2>
+      </div>
+      <div class="steps">
+        <article class="step">
+          <span class="num">01</span>
+          <h3>A free website snapshot</h3>
+          <p>Send me your site and I&rsquo;ll record a short video teardown: what&rsquo;s holding it back, a few quick wins, and three practical ways AI could save your team time or bring in more business.</p>
+          <span class="tag">Free · No obligation</span>
+        </article>
+        <article class="step">
+          <span class="num">02</span>
+          <h3>A website and AI roadmap</h3>
+          <p>A deeper look at your site, your customer journey and your workflows. You get a prioritized modernization plan, automation opportunities ranked by impact and effort, and a 90-day action plan.</p>
+          <span class="tag">Fee credited toward the build</span>
+        </article>
+        <article class="step">
+          <span class="num">03</span>
+          <h3>Build and launch</h3>
+          <p>I lead the redesign and automation work with a trusted team of developers, so you get the strategy and the execution without managing vendors.</p>
+        </article>
+        <article class="step">
+          <span class="num">04</span>
+          <h3>Ongoing AI advisory</h3>
+          <p>Once you&rsquo;ve launched, I stay on as your AI advisor to keep improving the site, add new automations and help you make smart decisions about tools and spending.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="thanks-band" aria-label="Optional thank-you">
+    <div class="wrap">
+      <div class="band">
+        <span class="label">Free, always</span>
+        <div>
+          <h2 class="serif">Pay what it was worth to you.</h2>
+          <p>The snapshot is free. If it helped and you&rsquo;d like to say thank you, your snapshot will include a link for an optional contribution. Entirely up to you, and always appreciated.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="label">About</span>
+        <h2 class="serif">Why work <em>with me</em></h2>
+      </div>
+      <div>
+        <div class="rule"></div>
+        <p>I&rsquo;ve spent 30 years making big technology change work at <strong>Microsoft, Hewlett Packard Enterprise and BlackBerry</strong>, most recently as a director at Microsoft leading AI adoption and transformation for data center operations across the Americas.</p>
+        <p style="margin-top:1em">I take on a small number of clients at a time, by referral, so every snapshot gets my full attention.</p>
+        <div class="pills" aria-label="Credentials">
+          <span class="pill">MBA</span><span class="pill">PMP</span><span class="pill">PMI-ACP</span><span class="pill">30+ years</span>
+        </div>
+        <a class="more" href="https://rossetta.ai">More about me at rossetta.ai</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="request" id="request">
+    <div class="wrap">
+      <div class="form-card" id="form-card">
+        <div class="sec-head">
+          <span class="label">Get started</span>
+          <h2 class="serif">Request your <em>free snapshot</em></h2>
+        </div>
+        <form id="snap-form" action="https://formspree.io/f/mrpqejgd" method="POST">
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="company">Company</label><input type="text" id="company" name="company" autocomplete="organization" required></div>
+          <div class="field"><label for="website">Website</label><input type="url" id="website" name="website" placeholder="https://" autocomplete="url" required></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
+          <div class="field full"><label for="frustration">What&rsquo;s your biggest frustration with your site?</label><textarea id="frustration" name="frustration" rows="4" required></textarea></div>
+          <p class="status" role="status" aria-live="polite"></p>
+          <div class="form-foot">
+            <button class="btn btn-dark" type="submit">Request your free snapshot <span class="arr" aria-hidden="true">&rarr;</span></button>
+            <p class="alt">Or email me at <a href="mailto:hello@rossetta.ai">hello@rossetta.ai</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>This page is shared by invitation. If someone sent you here, they thought we&rsquo;d be a good fit.</p>
+    <p><a class="brand" href="https://rossetta.ai">Rossetta Sornabala</a> &nbsp;·&nbsp; © 2026</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var f=document.getElementById('snap-form'); if(!f||!window.fetch) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=f.querySelector('button[type=submit]'), st=f.querySelector('.status');
+    var d=new FormData(f);
+    d.append('_subject','Snapshot request: '+(f.company.value||'')+' ('+(f.website.value||'')+')');
+    d.append('_replyto',f.email.value);
+    d.append('source','snapshot page');
+    btn.disabled=true; st.className='status'; st.textContent='Sending…';
+    fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){
+      if(!r.ok) throw 0;
+      document.getElementById('form-card').innerHTML='<div class="done"><span class="label" style="color:var(--bronze);display:block;margin-bottom:18px">Received</span><h3>Thank you.</h3><p>I&rsquo;ll take a look at your site and send your snapshot within a few business days.</p></div>';
+    }).catch(function(){
+      btn.disabled=false; st.className='status err';
+      st.innerHTML='Sorry, that didn&rsquo;t send. Please email me at <a href="mailto:hello@rossetta.ai">hello@rossetta.ai</a>.';
+    });
+  });
+})();
+</script>
+</body>
+</html>

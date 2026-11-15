@@ -79,24 +79,25 @@ h2.serif em{color:var(--bronze)}
 /* wins (dark) */
 .wins{background:radial-gradient(50% 60% at 50% 0%,rgba(200,173,127,.14),transparent 70%),radial-gradient(70% 60% at 50% 110%,rgba(31,61,54,.6),transparent 70%),var(--ink);color:var(--t-light);border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;margin-top:clamp(80px,10vw,128px);padding-bottom:calc(clamp(80px,10vw,128px) + clamp(28px,4vw,64px))}
 .wins h2.serif em{color:var(--gold)}
-.wins .win-grid{border-top-color:rgba(238,231,219,.13)}
-.wins .win .num{color:var(--gold)}
-.wins .win p{color:var(--t-light-2)}
 .lift{position:relative;z-index:2;background:var(--paper);border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;margin-top:calc(-1 * clamp(28px,4vw,64px))}
-.win-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;border-top:1px solid rgba(20,32,28,.14);padding-top:36px}
-.win .num{font-family:var(--serif);color:var(--bronze);font-size:18px;display:block;margin-bottom:14px}
-.win h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,24px);line-height:1.2;margin-bottom:10px}
-.win p{color:var(--t-dark-2);font-size:16px}
+.principles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.principle{position:relative;padding:32px 28px 34px;border-radius:24px;border:1px solid rgba(238,231,219,.13);background:linear-gradient(180deg,rgba(238,231,219,.04),rgba(238,231,219,0));transition:border-color .6s var(--ease),transform .6s var(--ease),background .6s var(--ease)}
+.principle:hover{border-color:rgba(200,173,127,.55);transform:translateY(-6px);background:linear-gradient(180deg,rgba(200,173,127,.1),rgba(200,173,127,0))}
+.p-ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(200,173,127,.4);color:var(--gold);margin-bottom:56px}
+.principle h3{margin:0 0 12px;font-family:var(--serif);font-weight:500;font-size:clamp(22px,1.8vw,28px);line-height:1.15;letter-spacing:-.01em;color:var(--t-light)}
+.principle p{margin:0;font-size:15.5px;line-height:1.6;color:var(--t-light-2)}
 
-/* steps */
-.steps{border-top:1px solid rgba(20,32,28,.14);display:grid;grid-template-columns:repeat(2,1fr);gap:0}
-.step{padding:40px 40px 44px 0;border-bottom:1px solid rgba(20,32,28,.14)}
-.step:nth-child(odd){border-right:1px solid rgba(20,32,28,.14)}
-.step:nth-child(even){padding-left:40px;padding-right:0}
-.step .num{font-family:var(--serif);color:var(--bronze);font-size:18px;display:block;margin-bottom:18px}
-.step h3{font-family:var(--serif);font-weight:500;font-size:clamp(24px,2.2vw,32px);line-height:1.15;margin-bottom:14px}
-.step p{color:var(--t-dark-2)}
-.step .tag{display:inline-block;margin-top:18px;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+/* steps = main-site service rows */
+.svc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(24px,4vw,64px);padding:clamp(36px,4.4vw,64px) 0;border-top:1px solid rgba(20,32,28,.14);position:relative}
+.svc:last-child{border-bottom:1px solid rgba(20,32,28,.14)}
+.svc::before{content:"";position:absolute;left:0;top:-1px;height:1px;width:100%;background:var(--t-dark);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease)}
+.svc:hover::before{transform:scaleX(1)}
+.svc-num{margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.6vw,26px);line-height:1;color:var(--bronze)}
+.svc-main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,4vw,64px)}
+.svc h3{margin:0 0 16px;font-family:var(--serif);font-weight:500;font-size:clamp(28px,2.8vw,44px);line-height:1.05;letter-spacing:-.01em;transition:transform .8s var(--ease)}
+.svc:hover h3{transform:translateX(12px)}
+.svc .tag{font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--bronze)}
+.svc-desc{margin:0;font-size:18px;line-height:1.6;color:var(--t-dark-2);max-width:460px}
 
 /* thank-you band */
 .thanks-band{padding:0}
@@ -144,15 +145,16 @@ footer{background:var(--ink);color:var(--t-light-2);padding:calc(48px + clamp(28
 .foot .brand{font-size:13px}
 
 @media (max-width:860px){
-  .steps,.about-grid,form,.band{grid-template-columns:1fr}
-  .win-grid{grid-template-columns:1fr 1fr}
-  .step,.step:nth-child(even){padding:32px 0;border-right:0}
+  .about-grid,form,.band{grid-template-columns:1fr}
+  .principles{grid-template-columns:1fr 1fr}
+  .svc,.svc-main{grid-template-columns:1fr;gap:14px}
   .band{gap:16px}
 }
 @media (max-width:520px){
   .nav-cta{display:none}
   .brand{font-size:15px;letter-spacing:.16em}
-  .win-grid{grid-template-columns:1fr}
+  .principles{grid-template-columns:1fr}
+  .p-ico{margin-bottom:28px}
   .btn{width:100%;justify-content:space-between}
   .nav .label{display:none}
   .foot{flex-direction:column}
@@ -188,11 +190,11 @@ footer{background:var(--ink);color:var(--t-light-2);padding:calc(48px + clamp(28
       <div class="sec-head">
         <h2 class="serif">Results your team <em>can feel</em></h2>
       </div>
-      <div class="win-grid">
-        <div class="win"><span class="num">01</span><h3>More of the right leads</h3><p>A site that makes your value clear in seconds and turns more of your existing traffic into real conversations.</p></div>
-        <div class="win"><span class="num">02</span><h3>Hours back every week</h3><p>AI handles the repetitive work, from first replies to follow-ups and CRM updates, so your people focus on customers.</p></div>
-        <div class="win"><span class="num">03</span><h3>Faster response</h3><p>Every enquiry gets an answer while the buyer is still interested, not days later.</p></div>
-        <div class="win"><span class="num">04</span><h3>A team that uses it</h3><p>AI only pays off when people trust it and use it. I make sure your team is part of the change.</p></div>
+      <div class="principles">
+        <div class="principle"><span class="p-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><h3>More of the right leads</h3><p>A site that makes your value clear in seconds and turns more of your existing traffic into real conversations.</p></div>
+        <div class="principle"><span class="p-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Hours back every week</h3><p>AI handles the repetitive work, from first replies to follow-ups and CRM updates, so your people can focus on customers.</p></div>
+        <div class="principle"><span class="p-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><h3>Faster response</h3><p>Every enquiry gets an answer while the buyer is still interested, not days later.</p></div>
+        <div class="principle"><span class="p-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18.5 14.8c1.6.8 2.6 2.5 3 5.2"/></svg></span><h3>A team that uses it</h3><p>AI only pays off when people trust it and use it. I make sure your team is part of the change.</p></div>
       </div>
     </div>
   </section>
@@ -203,30 +205,11 @@ footer{background:var(--ink);color:var(--t-light-2);padding:calc(48px + clamp(28
         <h2 class="serif">How we <em>work together</em></h2>
         <p>Start with a free snapshot. Go further only if it makes sense for you.</p>
       </div>
-      <div class="steps">
-        <article class="step">
-          <span class="num">01</span>
-          <h3>A free website snapshot</h3>
-          <p>Send me your site and I&rsquo;ll record a short video walkthrough: what&rsquo;s costing you leads, a few quick wins, and three practical ways AI could save your team time or bring in more business.</p>
-          <span class="tag">Free · No obligation</span>
-        </article>
-        <article class="step">
-          <span class="num">02</span>
-          <h3>A website and AI roadmap</h3>
-          <p>A deeper look at your site, your customer journey and the work your team does every day. You get a clear plan: what to fix first, where AI will pay off fastest, and a 90-day roadmap to get there.</p>
-          <span class="tag">Fee credited toward the build</span>
-        </article>
-        <article class="step">
-          <span class="num">03</span>
-          <h3>Build and launch</h3>
-          <p>I lead the redesign and the automation work with a trusted team of developers. You get one accountable partner for strategy and execution, without managing vendors.</p>
-        </article>
-        <article class="step">
-          <span class="num">04</span>
-          <h3>Stay ahead</h3>
-          <p>After launch, I stay on as your AI advisor: improving the site, adding automations as they prove their value, and helping you make smart calls on tools and spending as AI keeps changing.</p>
-          <span class="tag">Ongoing advisory</span>
-        </article>
+      <div class="svcs">
+        <article class="svc"><p class="svc-num">01</p><div class="svc-main"><div><h3>A free website snapshot</h3><span class="tag">Free · No obligation</span></div><p class="svc-desc">I record a short video walkthrough of your site: what&rsquo;s costing you leads, a few quick wins, and three practical ways AI could save your team time or bring in more business.</p></div></article>
+        <article class="svc"><p class="svc-num">02</p><div class="svc-main"><div><h3>A website and AI roadmap</h3><span class="tag">Fee credited toward the build</span></div><p class="svc-desc">A deeper look at your site, your customer journey and the work your team does every day. You get a clear plan: what to fix first, where AI will pay off fastest, and a 90-day roadmap to get there.</p></div></article>
+        <article class="svc"><p class="svc-num">03</p><div class="svc-main"><div><h3>Build and launch</h3><span class="tag">Strategy and execution</span></div><p class="svc-desc">I lead the redesign and the automation work with a trusted team of developers. You get one accountable partner for strategy and execution, without managing vendors.</p></div></article>
+        <article class="svc"><p class="svc-num">04</p><div class="svc-main"><div><h3>Stay ahead</h3><span class="tag">Ongoing advisory</span></div><p class="svc-desc">After launch, I stay on as your AI advisor: improving the site, adding automations as they prove their value, and helping you make smart calls on tools and spending as AI keeps changing.</p></div></article>
       </div>
     </div>
   </section>

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="A private, by-referral offer from Rossetta Sornabala to modernize your website and put AI to work.">
-<title>Website & AI Snapshot · Rossetta Sornabala</title>
+<meta name="description" content="A private, by-referral offer from Rossetta Sornabala: help your organization win with AI, starting with your website.">
+<title>Win with AI · Rossetta Sornabala</title>
 <link rel="icon" href="images/rs-logo-email.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +72,13 @@ h2.serif em{color:var(--bronze)}
 .problem p.muted{color:var(--t-dark-2)}
 .problem p.close{color:var(--bronze)}
 
+/* wins */
+.wins{padding-bottom:0}
+.win-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;border-top:1px solid rgba(20,32,28,.14);padding-top:36px}
+.win .num{font-family:var(--serif);color:var(--bronze);font-size:18px;display:block;margin-bottom:14px}
+.win h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,1.7vw,24px);line-height:1.2;margin-bottom:10px}
+.win p{color:var(--t-dark-2);font-size:16px}
+
 /* steps */
 .steps{border-top:1px solid rgba(20,32,28,.14);display:grid;grid-template-columns:repeat(2,1fr);gap:0}
 .step{padding:40px 40px 44px 0;border-bottom:1px solid rgba(20,32,28,.14)}
@@ -129,10 +136,12 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
 
 @media (max-width:860px){
   .steps,.about-grid,form,.band{grid-template-columns:1fr}
+  .win-grid{grid-template-columns:1fr 1fr}
   .step,.step:nth-child(even){padding:32px 0;border-right:0}
   .band{gap:16px}
 }
 @media (max-width:520px){
+  .win-grid{grid-template-columns:1fr}
   .btn{width:100%;justify-content:space-between}
   .nav .label{display:none}
   .foot{flex-direction:column}
@@ -148,8 +157,8 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
   </div>
   <div class="wrap hero-body">
     <span class="label eyebrow">Private offer</span>
-    <h1 class="serif">Your website should work <em>as hard as you do.</em></h1>
-    <p class="hero-sub">A private, by-referral offer for companies ready to modernize their website and put AI to work.</p>
+    <h1 class="serif">Helping organizations <em>win with AI.</em></h1>
+    <p class="hero-sub">It starts with your website, the first place customers decide whether to trust you. This is a private, by-referral offer to modernize it and put AI to work behind it.</p>
     <a class="btn btn-gold" href="#request">Request your free snapshot <span class="arr" aria-hidden="true">&rarr;</span></a>
   </div>
 </header>
@@ -157,40 +166,57 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
 <main>
   <section class="problem" aria-label="The opportunity">
     <div class="wrap">
-      <p>Most B2B websites were built for a different era. They look dated, bury the message and quietly lose leads.</p>
-      <p class="muted">Meanwhile, AI can now handle much of the busywork your team still does by hand: qualifying leads, answering common questions, following up and keeping your CRM current.</p>
-      <p class="close">I help mid-size companies fix both.</p>
+      <p>The organizations pulling ahead right now aren&rsquo;t the ones with the biggest AI budgets. They&rsquo;re the ones putting AI to work where it counts: in front of customers, and behind the scenes where the busywork piles up.</p>
+      <p class="muted">For most B2B companies, that starts with the website. It&rsquo;s often years out of date, it buries the message, and it quietly loses leads. Meanwhile, the team is still qualifying leads, answering the same questions and updating the CRM by hand.</p>
+      <p class="close">I help mid-size organizations fix both, so they win more business with the team they already have.</p>
+    </div>
+  </section>
+
+  <section class="wins" aria-label="What winning looks like">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="label">What winning looks like</span>
+        <h2 class="serif">Results your team <em>can feel</em></h2>
+      </div>
+      <div class="win-grid">
+        <div class="win"><span class="num">01</span><h3>More of the right leads</h3><p>A site that makes your value clear in seconds and turns more of your existing traffic into real conversations.</p></div>
+        <div class="win"><span class="num">02</span><h3>Hours back every week</h3><p>AI handles the repetitive work, from first replies to follow-ups and CRM updates, so your people focus on customers.</p></div>
+        <div class="win"><span class="num">03</span><h3>Faster response</h3><p>Every enquiry gets an answer while the buyer is still interested, not days later.</p></div>
+        <div class="win"><span class="num">04</span><h3>A team that uses it</h3><p>AI only pays off when people trust it and use it. I make sure your team is part of the change.</p></div>
+      </div>
     </div>
   </section>
 
   <section id="how-it-works">
     <div class="wrap">
       <div class="sec-head">
-        <span class="label">The offer</span>
-        <h2 class="serif">How it <em>works</em></h2>
+        <span class="label">The path</span>
+        <h2 class="serif">How we <em>work together</em></h2>
+        <p>Start with a free snapshot. Go further only if it makes sense for you.</p>
       </div>
       <div class="steps">
         <article class="step">
           <span class="num">01</span>
           <h3>A free website snapshot</h3>
-          <p>Send me your site and I&rsquo;ll record a short video teardown: what&rsquo;s holding it back, a few quick wins, and three practical ways AI could save your team time or bring in more business.</p>
+          <p>Send me your site and I&rsquo;ll record a short video walkthrough: what&rsquo;s costing you leads, a few quick wins, and three practical ways AI could save your team time or bring in more business.</p>
           <span class="tag">Free · No obligation</span>
         </article>
         <article class="step">
           <span class="num">02</span>
           <h3>A website and AI roadmap</h3>
-          <p>A deeper look at your site, your customer journey and your workflows. You get a prioritized modernization plan, automation opportunities ranked by impact and effort, and a 90-day action plan.</p>
+          <p>A deeper look at your site, your customer journey and the work your team does every day. You get a clear plan: what to fix first, where AI will pay off fastest, and a 90-day roadmap to get there.</p>
           <span class="tag">Fee credited toward the build</span>
         </article>
         <article class="step">
           <span class="num">03</span>
           <h3>Build and launch</h3>
-          <p>I lead the redesign and automation work with a trusted team of developers, so you get the strategy and the execution without managing vendors.</p>
+          <p>I lead the redesign and the automation work with a trusted team of developers. You get one accountable partner for strategy and execution, without managing vendors.</p>
         </article>
         <article class="step">
           <span class="num">04</span>
-          <h3>Ongoing AI advisory</h3>
-          <p>Once you&rsquo;ve launched, I stay on as your AI advisor to keep improving the site, add new automations and help you make smart decisions about tools and spending.</p>
+          <h3>Stay ahead</h3>
+          <p>After launch, I stay on as your AI advisor: improving the site, adding automations as they prove their value, and helping you make smart calls on tools and spending as AI keeps changing.</p>
+          <span class="tag">Ongoing advisory</span>
         </article>
       </div>
     </div>
@@ -202,7 +228,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
         <span class="label">Free, always</span>
         <div>
           <h2 class="serif">Pay what it was worth to you.</h2>
-          <p>The snapshot is free. If it helped and you&rsquo;d like to say thank you, your snapshot will include a link for an optional contribution. Entirely up to you, and always appreciated.</p>
+          <p>The snapshot costs nothing and comes with no sales pitch. If it helped and you&rsquo;d like to say thank you, it will include a link for an optional contribution. Entirely up to you.</p>
         </div>
       </div>
     </div>
@@ -216,7 +242,8 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
       </div>
       <div>
         <div class="rule"></div>
-        <p>I&rsquo;ve spent 30 years making big technology change work at <strong>Microsoft, Hewlett Packard Enterprise and BlackBerry</strong>, most recently as a director at Microsoft leading AI adoption and transformation for data center operations across the Americas.</p>
+        <p>I&rsquo;ve spent 30 years helping organizations make big technology change work, at <strong>Microsoft, Hewlett Packard Enterprise and BlackBerry</strong>. Most recently I led AI adoption and transformation for Microsoft&rsquo;s data center operations across the Americas, helping thousands of people put AI to work in their daily jobs.</p>
+        <p style="margin-top:1em">What I&rsquo;ve learned is simple: technology only wins when people use it. That&rsquo;s how I approach every client.</p>
         <p style="margin-top:1em">I take on a small number of clients at a time, by referral, so every snapshot gets my full attention.</p>
         <div class="pills" aria-label="Credentials">
           <span class="pill">MBA</span><span class="pill">PMP</span><span class="pill">PMI-ACP</span><span class="pill">30+ years</span>
@@ -232,6 +259,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
         <div class="sec-head">
           <span class="label">Get started</span>
           <h2 class="serif">Request your <em>free snapshot</em></h2>
+          <p>Tell me a little about your organization. I&rsquo;ll send your snapshot within a few business days.</p>
         </div>
         <form id="snap-form" action="https://formspree.io/f/mrpqejgd" method="POST">
           <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -239,7 +267,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
           <div class="field"><label for="company">Company</label><input type="text" id="company" name="company" autocomplete="organization" required></div>
           <div class="field"><label for="website">Website</label><input type="url" id="website" name="website" placeholder="https://" autocomplete="url" required></div>
           <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required></div>
-          <div class="field full"><label for="frustration">What&rsquo;s your biggest frustration with your site?</label><textarea id="frustration" name="frustration" rows="4" required></textarea></div>
+          <div class="field full"><label for="frustration">What&rsquo;s your biggest frustration with your website today?</label><textarea id="frustration" name="frustration" rows="4" required></textarea></div>
           <p class="status" role="status" aria-live="polite"></p>
           <div class="form-foot">
             <button class="btn btn-dark" type="submit">Request your free snapshot <span class="arr" aria-hidden="true">&rarr;</span></button>

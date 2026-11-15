@@ -3,3 +3,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://rossetta.ai/sitemap.xml
+Disallow: /signature.html

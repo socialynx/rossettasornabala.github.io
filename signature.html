@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Email signature · Rossetta Sornabala</title>
+<style>
+  body{margin:0;background:#F5F0E8;font-family:Arial,Helvetica,sans-serif;color:#14201C}
+  .wrap{max-width:720px;margin:48px auto;padding:0 24px}
+  h1{font-family:Georgia,serif;font-weight:400;font-size:26px;margin:0 0 6px}
+  .note{color:#45504B;font-size:15px;line-height:1.6;margin:0 0 24px}
+  .card{background:#fff;border:1px solid #E4DACA;border-radius:14px;padding:28px 28px 24px}
+  .lbl{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#8E6B3A;margin:0 0 14px}
+  ol{color:#45504B;font-size:15px;line-height:1.7;padding-left:20px}
+  button{margin-top:16px;background:#14201C;color:#EEE7DB;border:0;border-radius:999px;padding:12px 22px;font-size:14px;cursor:pointer}
+  #ok{margin-left:10px;color:#1F3D36;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Your Gmail signature</h1>
+  <p class="note">Click <b>Copy signature</b>, then paste it into Gmail (steps below).</p>
+
+  <div class="card">
+    <p class="lbl">Preview</p>
+    <div id="sig">
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;">
+  <tr>
+    <td valign="middle" style="padding:0 16px 0 0;">
+      <a href="https://rossetta.ai" style="text-decoration:none;"><img src="https://rossetta.ai/images/rs-logo-email.png" width="72" height="72" alt="RS" style="display:block;width:72px;height:72px;border-radius:8px;border:0;"></a>
+    </td>
+    <td valign="middle" style="padding:0 0 0 16px;border-left:2px solid #C8AD7F;">
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:24px;color:#14201C;letter-spacing:0.5px;">Rossetta Sornabala</div>
+      <div style="font-size:13px;line-height:20px;color:#8E6B3A;letter-spacing:0.3px;padding-top:2px;">Independent Management Consultant</div>
+      <div style="font-size:13px;line-height:20px;color:#45504B;">AI Transformation &middot; Data Center Operations</div>
+      <div style="font-size:13px;line-height:20px;padding-top:6px;">
+        <a href="https://rossetta.ai" style="color:#14201C;text-decoration:none;font-weight:bold;">rossetta.ai</a>
+        <span style="color:#C8AD7F;">&nbsp;|&nbsp;</span>
+        <a href="mailto:hello@rossetta.ai" style="color:#14201C;text-decoration:none;">hello@rossetta.ai</a>
+        <span style="color:#C8AD7F;">&nbsp;|&nbsp;</span>
+        <a href="https://www.linkedin.com/in/rossetta-sornabala-2749b435" style="color:#14201C;text-decoration:none;">LinkedIn</a>
+      </div>
+    </td>
+  </tr>
+</table>
+    </div>
+    <button id="copy" type="button">Copy signature</button><span id="ok"></span>
+  </div>
+
+  <p class="lbl" style="margin-top:32px">Add it to Gmail</p>
+  <ol>
+    <li>In Gmail, click the <b>gear icon</b> (top right), then <b>See all settings</b>.</li>
+    <li>On the <b>General</b> tab, scroll to <b>Signature</b> and click <b>Create new</b>. Name it "Rossetta".</li>
+    <li>Click inside the signature box and paste (Cmd + V on Mac, Ctrl + V on Windows).</li>
+    <li>Under <b>Signature defaults</b>, choose it for new emails and replies.</li>
+    <li>Scroll to the bottom and click <b>Save Changes</b>.</li>
+  </ol>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click', async function(){
+  var el=document.getElementById('sig'), ok=document.getElementById('ok');
+  try{
+    var html=el.innerHTML, text=el.innerText;
+    await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob([text],{type:'text/plain'})})]);
+    ok.textContent='Copied. Now paste it into Gmail.';
+  }catch(e){
+    var r=document.createRange(); r.selectNodeContents(el);
+    var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    try{ document.execCommand('copy'); ok.textContent='Copied. Now paste it into Gmail.'; }
+    catch(e2){ ok.textContent='Selected. Press Cmd + C (Mac) or Ctrl + C (Windows) to copy.'; }
+  }
+});
+</script>
+</body>
+</html>

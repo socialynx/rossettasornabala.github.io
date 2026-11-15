@@ -20,39 +20,43 @@
   --sans:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
   --ease:cubic-bezier(.16,1,.3,1);
   --pad:clamp(18px,3.6vw,56px);
-  --max:1180px;
+  --max:1600px;--on-accent:#0C1210;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;background:var(--paper);color:var(--t-dark);-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;background:var(--paper);color:var(--t-dark);-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.wrap{width:min(var(--max),100% - 2*var(--pad));margin-inline:auto}
-.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.1}
+.wrap{padding-inline:var(--pad);max-width:var(--max);margin:0 auto}
+body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.04;font-optical-sizing:auto}
 .serif em{font-style:normal}
-.label{font-size:12.5px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
+.label{font-size:12px;font-weight:500;letter-spacing:.24em;text-transform:uppercase}
 
 /* buttons */
-.btn{display:inline-flex;align-items:center;gap:14px;font:inherit;font-size:15px;font-weight:500;letter-spacing:.01em;text-decoration:none;padding:16px 26px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease)}
-.btn .arr{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;transition:transform .4s var(--ease)}
-.btn:hover .arr{transform:translateX(3px)}
-.btn-gold{background:var(--gold);color:var(--ink)}
-.btn-gold .arr{background:var(--ink);color:var(--gold)}
-.btn-gold:hover{background:var(--gold-2)}
-.btn-dark{background:var(--ink);color:var(--ivory)}
-.btn-dark .arr{background:var(--gold);color:var(--ink)}
-.btn-dark:hover{background:var(--green)}
+.btn{position:relative;display:inline-flex;align-items:center;gap:14px;font:inherit;font-size:15px;font-weight:500;letter-spacing:.01em;text-decoration:none;padding:17px 28px;border-radius:999px;border:1px solid transparent;cursor:pointer;overflow:hidden;isolation:isolate;transition:color .5s var(--ease)}
+.btn::before{content:"";position:absolute;left:50%;top:100%;width:140%;aspect-ratio:1;border-radius:50%;transform:translate(-50%,0) scale(.2);z-index:-1;transition:transform .7s var(--ease),top .7s var(--ease)}
+.btn:hover::before{top:-40%;transform:translate(-50%,0) scale(1)}
+.btn .ar{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;transition:transform .5s var(--ease)}
+.btn:hover .ar{transform:rotate(-45deg)}
+.btn-gold{background:var(--gold);color:var(--on-accent)}
+.btn-gold::before{background:var(--ivory)}
+.btn-gold .ar{background:var(--on-accent);color:var(--gold)}
+.btn-dark{background:var(--t-dark);color:var(--paper)}
+.btn-dark::before{background:var(--green)}
+.btn-dark .ar{background:var(--gold);color:var(--on-accent)}
 .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.nav-cta{padding:12px 22px !important;font-size:14px}
 .btn[disabled]{opacity:.6;cursor:default}
 
 /* dark hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(100deg,var(--ink) 0%,var(--ink-2) 50%,var(--ink-3) 100%);color:var(--t-light);padding:0 0 clamp(80px,11vw,140px)}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 80% at 78% 30%,rgba(31,61,54,.9),transparent 70%),radial-gradient(ellipse 30% 45% at 82% 25%,rgba(200,173,127,.08),transparent 70%);pointer-events:none}
+.hero{position:relative;overflow:hidden;background:radial-gradient(42% 60% at 72% 40%,rgba(200,173,127,.16),transparent 70%),radial-gradient(80% 60% at 50% 115%,rgba(31,61,54,.75),transparent 70%),var(--ink);color:var(--t-light);padding:0 0 clamp(80px,11vw,140px)}
 .hero > *{position:relative}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:30px 0}
-.brand{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--t-light)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px var(--pad)}
+.brand{font-family:var(--serif);font-weight:500;font-size:19px;line-height:1;letter-spacing:.24em;text-transform:uppercase;text-decoration:none;color:var(--t-light)}
 .nav .label{color:var(--gold)}
 .hero-body{padding-top:clamp(56px,9vw,120px)}
-.hero .label.eyebrow{color:var(--gold);margin-bottom:26px;display:block}
+.hero .label.eyebrow{color:var(--gold);margin-bottom:22px;display:block}
 .hero h1{font-size:clamp(34px,4.2vw,58px);max-width:14em;margin-bottom:28px}
 .hero h1 em{color:var(--gold)}
 .hero-sub{font-size:clamp(18px,1.6vw,21px);color:var(--t-light-2);max-width:34rem;margin-bottom:42px}
@@ -61,7 +65,7 @@ a{color:inherit}
 section{padding:clamp(80px,10vw,128px) 0}
 .sec-head{max-width:40rem;margin-bottom:clamp(36px,5vw,56px)}
 .sec-head .label{color:var(--bronze);display:block;margin-bottom:18px}
-h2.serif{font-size:clamp(30px,3.2vw,46px)}
+h2.serif{font-size:clamp(32px,3.6vw,60px)}
 h2.serif em{color:var(--bronze)}
 .sec-head p{color:var(--t-dark-2);margin-top:16px;font-size:18px}
 
@@ -91,13 +95,13 @@ h2.serif em{color:var(--bronze)}
 
 /* thank-you band */
 .thanks-band{padding:0}
-.band{background:var(--ivory);border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:auto 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+.band{background:var(--ivory);border-radius:28px;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,56px);align-items:center}
 .band .label{color:var(--bronze)}
 .band h2{font-size:clamp(28px,2.8vw,40px)}
 .band p{color:var(--t-dark-2);margin-top:12px;max-width:36rem}
 
 /* about (dark) */
-.about{background:linear-gradient(100deg,var(--ink) 0%,var(--ink-2) 50%,var(--ink-3) 100%);color:var(--t-light);border-radius:36px 36px 0 0;margin-top:clamp(80px,10vw,128px)}
+.about{background:radial-gradient(50% 50% at 50% 0%,rgba(200,173,127,.14),transparent 70%),var(--ink);color:var(--t-light);border-radius:clamp(28px,4vw,64px) clamp(28px,4vw,64px) 0 0;margin-top:clamp(80px,10vw,128px)}
 .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,5vw,80px);align-items:start}
 .about .label{color:var(--gold);display:block;margin-bottom:18px}
 .about h2 em{color:var(--gold)}
@@ -109,8 +113,8 @@ h2.serif em{color:var(--bronze)}
 .about a.more{display:inline-block;margin-top:28px;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(200,173,127,.5);padding-bottom:2px}
 
 /* form */
-.request{background:var(--ink-2);color:var(--t-light);padding-top:clamp(40px,6vw,80px)}
-.form-card{background:var(--paper);color:var(--t-dark);border-radius:28px;padding:clamp(32px,5vw,64px)}
+.request{background:var(--ink);color:var(--t-light);padding-top:clamp(40px,6vw,80px)}
+.form-card{background:var(--paper);color:var(--t-dark);border-radius:clamp(28px,4vw,64px);padding:clamp(32px,5vw,64px)}
 .form-card .sec-head{margin-bottom:36px}
 form{display:grid;grid-template-columns:1fr 1fr;gap:26px 28px}
 .field{display:flex;flex-direction:column;gap:8px}
@@ -130,8 +134,8 @@ input::placeholder,textarea::placeholder{color:#9aa19d}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 
 /* footer */
-footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-size:14px}
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 32px;border-top:1px solid rgba(238,231,219,.13);padding-top:28px}
+footer{background:var(--ink);color:var(--t-light-2);padding:48px 0 56px;font-size:14px}
+.foot{max-width:var(--max);margin:0 auto;padding-inline:var(--pad);display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px 32px;border-top:1px solid rgba(238,231,219,.13);padding-top:28px}
 .foot .brand{font-size:13px}
 
 @media (max-width:860px){
@@ -141,6 +145,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
   .band{gap:16px}
 }
 @media (max-width:520px){
+  .nav-cta{display:none}
   .win-grid{grid-template-columns:1fr}
   .btn{width:100%;justify-content:space-between}
   .nav .label{display:none}
@@ -151,15 +156,15 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
 <body>
 
 <header class="hero">
-  <div class="wrap nav">
+  <div class="nav">
     <a class="brand" href="https://rossetta.ai">Rossetta Sornabala</a>
-    <span class="label">By invitation</span>
+    <a class="btn btn-gold nav-cta" href="#request">Request a snapshot</a>
   </div>
   <div class="wrap hero-body">
-    <span class="label eyebrow">Private offer</span>
+    <span class="label eyebrow">Private offer &nbsp;·&nbsp; By invitation</span>
     <h1 class="serif">Helping organizations<br><em>win with AI.</em></h1>
     <p class="hero-sub">It starts with your website, the first place customers decide whether to trust you. This is a private, by-referral offer to modernize it and put AI to work behind it.</p>
-    <a class="btn btn-gold" href="#request">Request your free snapshot <span class="arr" aria-hidden="true">&rarr;</span></a>
+    <a class="btn btn-gold" href="#request">Request your free snapshot <span class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
 </header>
 
@@ -175,7 +180,6 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
   <section class="wins" aria-label="What winning looks like">
     <div class="wrap">
       <div class="sec-head">
-        <span class="label">What winning looks like</span>
         <h2 class="serif">Results your team <em>can feel</em></h2>
       </div>
       <div class="win-grid">
@@ -190,7 +194,6 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
   <section id="how-it-works">
     <div class="wrap">
       <div class="sec-head">
-        <span class="label">The path</span>
         <h2 class="serif">How we <em>work together</em></h2>
         <p>Start with a free snapshot. Go further only if it makes sense for you.</p>
       </div>
@@ -225,7 +228,6 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
   <section class="thanks-band" aria-label="Optional thank-you">
     <div class="wrap">
       <div class="band">
-        <span class="label">Free, always</span>
         <div>
           <h2 class="serif">Pay what it was worth to you.</h2>
           <p>The snapshot costs nothing and comes with no sales pitch. If it helped and you&rsquo;d like to say thank you, it will include a link for an optional contribution. Entirely up to you.</p>
@@ -237,7 +239,6 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
   <section class="about" id="about">
     <div class="wrap about-grid">
       <div>
-        <span class="label">About</span>
         <h2 class="serif">Why work <em>with me</em></h2>
       </div>
       <div>
@@ -257,7 +258,6 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
     <div class="wrap">
       <div class="form-card" id="form-card">
         <div class="sec-head">
-          <span class="label">Get started</span>
           <h2 class="serif">Request your <em>free snapshot</em></h2>
           <p>Tell me a little about your organization. I&rsquo;ll send your snapshot within a few business days.</p>
         </div>
@@ -270,7 +270,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
           <div class="field full"><label for="frustration">What&rsquo;s your biggest frustration with your website today?</label><textarea id="frustration" name="frustration" rows="4" required></textarea></div>
           <p class="status" role="status" aria-live="polite"></p>
           <div class="form-foot">
-            <button class="btn btn-dark" type="submit">Request your free snapshot <span class="arr" aria-hidden="true">&rarr;</span></button>
+            <button class="btn btn-dark" type="submit">Request your free snapshot <span class="ar" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button>
             <p class="alt">Or email me at <a href="mailto:hello@rossetta.ai">hello@rossetta.ai</a></p>
           </div>
         </form>
@@ -280,7 +280,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
 </main>
 
 <footer>
-  <div class="wrap foot">
+  <div class="foot">
     <p>This page is shared by invitation. If someone sent you here, they thought we&rsquo;d be a good fit.</p>
     <p><a class="brand" href="https://rossetta.ai">Rossetta Sornabala</a> &nbsp;·&nbsp; © 2026</p>
   </div>
@@ -299,7 +299,7 @@ footer{background:var(--ink-2);color:var(--t-light-2);padding:48px 0 56px;font-s
     btn.disabled=true; st.className='status'; st.textContent='Sending…';
     fetch(f.action,{method:'POST',body:d,headers:{'Accept':'application/json'}}).then(function(r){
       if(!r.ok) throw 0;
-      document.getElementById('form-card').innerHTML='<div class="done"><span class="label" style="color:var(--bronze);display:block;margin-bottom:18px">Received</span><h3>Thank you.</h3><p>I&rsquo;ll take a look at your site and send your snapshot within a few business days.</p></div>';
+      document.getElementById('form-card').innerHTML='<div class="done"><h3>Thank you.</h3><p>I&rsquo;ll take a look at your site and send your snapshot within a few business days.</p></div>';
     }).catch(function(){
       btn.disabled=false; st.className='status err';
       st.innerHTML='Sorry, that didn&rsquo;t send. Please email me at <a href="mailto:hello@rossetta.ai">hello@rossetta.ai</a>.';

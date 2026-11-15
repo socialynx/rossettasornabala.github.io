@@ -1,6 +1,6 @@
 # Search engines and AI answer engines are welcome to read this site.
 User-agent: *
 Allow: /
+Disallow: /signature.html
 
 Sitemap: https://rossetta.ai/sitemap.xml
-Disallow: /signature.html

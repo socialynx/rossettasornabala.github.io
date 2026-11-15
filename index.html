@@ -466,6 +466,8 @@ h2.serif em{color:inherit;font-style:normal}
 .f-media img{position:relative;width:auto}
 .f-logo,.f-wordmark{position:relative;transition:transform .9s var(--ease)}
 .f-card:hover .f-logo,.f-card:hover .f-wordmark{transform:scale(1.08)}
+.f-mark,.f-wordmark{filter:grayscale(1) brightness(.35) contrast(1.2);transition:filter .6s var(--ease),transform .9s var(--ease)}
+@media (hover:hover){.f-card:hover .f-mark,.f-card:hover .f-wordmark{filter:none}}
 .f-logo{display:flex;align-items:center;gap:12px}
 .f-mark{height:44px}
 .f-wordmark{height:44px}
